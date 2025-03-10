@@ -11,7 +11,8 @@ function enterApp() {
     config: {
       "iceServers": [{
         "urls": "stun2.l.google.com:19302"
-      }]
+      }],
+      "sdpSemantics": "unified-plan"
     }
   });
   peer.on("open", id => {
