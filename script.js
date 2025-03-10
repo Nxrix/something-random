@@ -7,14 +7,7 @@ let mediaCalls = {};
 function enterApp() {
   username = document.getElementById("username").value.trim();
   if (!username) return alert("Enter your name");
-  peer = new Peer(undefined,{
-    config: {
-      "iceServers": [{
-        "urls": "stun2.l.google.com:19302"
-      }],
-      "sdpSemantics": "unified-plan"
-    }
-  });
+  peer = new Peer();
   peer.on("open", id => {
     myId = id;
     const params = new URLSearchParams(window.location.search);
