@@ -1,0 +1,16 @@
+
+#main-ui,
+#room-ui {
+  display: none;
+}
+
+.media-container {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+
+.media-container video {
+  max-width: 80%;
+}

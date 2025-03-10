@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+  <div id="setup">
+    <input autocomplete="off" type="text" id="username" placeholder="Enter your name" />
+    <button onclick="enterApp()">Enter</button>
+  </div>
+
+  <div id="main-ui">
+    <button onclick="createRoom()">Create Room</button>
+    <button onclick="joinRoom()">Join Room</button>
+  </div>
+
+  <div id="room-ui">
+    <div>Room ID: <span id="room-id"></span></div>
+    
+    <div>
+      <h3>Media Streams</h3>
+      <div id="media-list"></div>
+    </div>
+
+    <div>
+      <h3>Chat</h3>
+      <textarea id="chat-box" readonly rows="8" cols="40"></textarea><br />
+      <input autocomplete="off" type="text" id="chat-input" placeholder="Type a message" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div>
+      <h3>Participants</h3>
+      <ul id="participants"></ul>
+    </div>
+
+    <div>
+      <h3>Media Controls</h3>
+      <button id="btn-video" onclick="toggleMedia('video')">Start Video</button>
+      <button id="btn-audio" onclick="toggleMedia('audio')">Start Audio</button>
+      <button id="btn-screen" onclick="toggleMedia('screen')">Share Screen</button>
+    </div>
+
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
