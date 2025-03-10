@@ -10,7 +10,7 @@ function enterApp() {
   peer = new Peer(undefined,{
     config: {
       "iceServers": [{
-        "urls": "turn:turn01.hubl.in?transport=udp"
+        "urls": "stun2.l.google.com:19302"
       }]
     }
   });
