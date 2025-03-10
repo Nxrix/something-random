@@ -7,7 +7,13 @@ let mediaCalls = {};
 function enterApp() {
   username = document.getElementById("username").value.trim();
   if (!username) return alert("Enter your name");
-  peer = new Peer();
+  peer = new Peer(undefined,{
+    config: {
+      "iceServers": [{
+        "urls": "turn:turn01.hubl.in?transport=udp"
+      }]
+    }
+  });
   peer.on("open", id => {
     myId = id;
     const params = new URLSearchParams(window.location.search);
