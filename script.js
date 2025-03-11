@@ -7,7 +7,24 @@ let mediaCalls = {};
 function enterApp() {
   username = document.getElementById("username").value.trim();
   if (!username) return alert("Enter your name");
-  peer = new Peer();
+  peer = new Peer({
+    config: {
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        { urls: "stun:stun1.l.google.com:19302" },
+        {
+          urls: "turn:turn.anyfirewall.com:443?transport=tcp",
+          username: "webrtc",
+          credential: "webrtc"
+        },
+        {
+          urls: "turn:turn.bistri.com:80",
+          username: "homeo",
+          credential: "homeo"
+        }
+      ]
+    }
+  });;
   peer.on("open", id => {
     myId = id;
     const params = new URLSearchParams(window.location.search);
